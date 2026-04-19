@@ -40,3 +40,10 @@ def call_rho(S, K, sigma, T = 1/365, r=0):
 def put_rho(S, K, sigma, T = 1/365, r=0):
     return (-K * T * np.exp(-r * T) * norm.cdf(-d2(S, K, sigma, T, r)))
 
+# function wrapper
+def greeks(S, K, sigma, T = 1/365, r = 0):
+    return {'call delta': call_delta(S, K, sigma, T, r), 'put delta': put_delta(S, K, sigma, T, r), 
+            'gamma': gamma(S, K, sigma, T, r), 
+            'vega': vega(S, K, sigma, T, r), 
+            'call_theta': call_theta(S, K, sigma, T, r), 'put_theta': put_theta(S, K, sigma, T,r), 
+            'call_rho': call_rho(S, K, sigma, T,r), 'put_rho': put_rho(S, K, sigma, T, r)}

@@ -25,9 +25,9 @@ def put(S, K, sigma, T, r):
     put_value = (K * np.exp(-r * T) * norm.cdf(-(d2(S, K, sigma, T, r)))) - (S * norm.cdf(-d1(S, K, sigma, T, r)))
     return float(round(put_value, 3))
 
-
+# function wrapper
 def black_scholes(S, K, sigma, T, r):
-    return (call(S, K, sigma, T, r), put(S, K, sigma, T, r))
+    return {'call value': call(S, K, sigma, T, r), 'put value': put(S, K, sigma, T, r)}
 
-# test run
+# test run 
 # print(black_scholes(27.3, 25.5, 0.18, 1/365, 0))

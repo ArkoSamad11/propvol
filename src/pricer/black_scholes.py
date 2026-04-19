@@ -21,4 +21,4 @@ def put(S, K, sigma, T, r):
 def black_scholes(S, K, sigma, T, r):
     return (call(S, K, sigma, T, r), put(S, K, sigma, T, r))
 
-print(black_scholes(27.3, 25.5, 0.18, 1/365, 0))
+

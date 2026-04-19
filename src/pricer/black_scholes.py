@@ -13,12 +13,13 @@ def d2(S, K, sigma, T = (1/365), r = 0):
 # theoretical worth of over bet 
 def call(S, K, sigma, T, r):
     call_value = (S * norm.cdf(d1(S, K, sigma, T, r))) - (K * math.exp(-r * (T)) * norm.cdf(d2(S, K, sigma, T, r)))
-    return float(round(call_value, 2))
+    return float(round(call_value, 3))
 # theoretical worth of under bet
 def put(S, K, sigma, T, r):
     put_value = (K * math.exp(-r * T) * norm.cdf(-(d2(S, K, sigma, T, r)))) - (S * norm.cdf(-d1(S, K, sigma, T, r)))
-    return float(round(put_value, 2))
+    return float(round(put_value, 3))
 def black_scholes(S, K, sigma, T, r):
     return (call(S, K, sigma, T, r), put(S, K, sigma, T, r))
 
-
+# test run
+# print(black_scholes(27.3, 25.5, 0.18, 1/365, 0))

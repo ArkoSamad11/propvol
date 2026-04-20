@@ -20,6 +20,7 @@ def get_stats(PlayerFullName, season):
    last_twenty_player_betting_stats = df_gamelog[['PTS', 'REB', 'AST', 'STL', 'BLK', 'FG3M', 'TOV']]
    return last_twenty_player_betting_stats
 
+
 # function wrapper
 def stat_information(PlayerFullName, season, stat_category):
     # standardize stat category

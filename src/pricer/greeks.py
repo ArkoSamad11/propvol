@@ -42,7 +42,7 @@ def put_rho(S, K, sigma, T = 1/365, r=0):
 
 # function wrapper
 def greeks(S, K, sigma, T = 1/365, r = 0):
-    return {'call delta': call_delta(S, K, sigma, T, r), 'put delta': put_delta(S, K, sigma, T, r), 
+        return {'call delta': call_delta(S, K, sigma, T, r), 'put delta': put_delta(S, K, sigma, T, r), 
             'gamma': gamma(S, K, sigma, T, r), 
             'vega': vega(S, K, sigma, T, r), 
             'call_theta': call_theta(S, K, sigma, T, r), 'put_theta': put_theta(S, K, sigma, T,r), 

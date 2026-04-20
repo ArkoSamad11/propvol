@@ -23,7 +23,7 @@ def get_stats(PlayerFullName, season):
 
 # function wrapper
 def stat_information(PlayerFullName, season, stat_category):
-    # standardize stat category
+# standardize stat category
     stat_category = stat_category.lower()
     stat_category = stat_category.replace(' ', '')
     if stat_category == 'points':
